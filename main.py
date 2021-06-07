@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 import MangaDexPy, sys
+from _Getch import _Getch
 
 MD = MangaDexPy.MangaDex()
 Userinput = sys.argv#input()

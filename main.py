@@ -20,5 +20,6 @@ else:
     mangasc = MD.search("manga",{"title" : Userinput[1]}, 100)[mangaOn]
 
     print(mangasc.title["en"])
+    print("")
 
 #print(MD.get_manga("ed996855-70de-449f-bba2-e8e24224c14d").title)

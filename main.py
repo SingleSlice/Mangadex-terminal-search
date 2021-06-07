@@ -1,24 +1,24 @@
-from MangaDexPy import manga
-import gi
-
-gi.require_version("Gtk", "3.0")
-from gi.repository import Gtk
-
-import MangaDexPy
+import MangaDexPy, sys
 
 MD = MangaDexPy.MangaDex()
 
 print("search :")
-bababooey = input()
+Userinput = sys.argv#input()
 
-for iteration ,manga in enumerate(MD.search("manga",{"title" : bababooey}, 10)):
-    
-    print(str(iteration) + str(manga.title["en"]))
+if len(Userinput) < 2:
 
-print("which one?")
-mangaOn = int(input())
-mangasc = MD.search("manga",{"title" : bababooey}, 100)[mangaOn]
+    print("sus")
+else:
 
-print(mangasc.title["en"])
+    print("you searched : " + str(Userinput[1]) + "\n")
+    for iteration ,manga in enumerate(MD.search("manga",{"title" : Userinput[1]}, 10)):
+
+        print(str(iteration) + str(manga.title["en"]))
+
+    print("which one?")
+    mangaOn = int(input())
+    mangasc = MD.search("manga",{"title" : Userinput[1]}, 100)[mangaOn]
+
+    print(mangasc.title["en"])
 
 #print(MD.get_manga("ed996855-70de-449f-bba2-e8e24224c14d").title)
